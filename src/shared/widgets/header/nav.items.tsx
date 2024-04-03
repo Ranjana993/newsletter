@@ -1,4 +1,5 @@
-import { navItems } from '@/app/config/constants'
+// import { navItems } from '@/app/config/constants'
+import { navItems } from '@/app/configs/constants'
 import Link from 'next/link'
 import React from 'react'
 
