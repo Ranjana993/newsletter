@@ -1,18 +1,34 @@
 "use client"
-
+import { useUser } from "@clerk/nextjs";
 import { Button } from '@nextui-org/react'
+import Image from "next/image";
 import Link from 'next/link'
 import React from 'react'
 
 const Toolbar = () => {
+  const { user } = useUser();
   return (
     <>
-      <Button color='primary' className='text-lg'>
+      <Button color="primary" className="text-lg">
         Start Trial
       </Button>
-      <Link href={"/sign-up"}>
-        Login
-      </Link>
+      {
+        user ? (
+          <>
+            <Link href={"/dashboard"}>
+              <Image
+                src={user?.imageUrl}
+                alt="User"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
+            </Link>
+          </>
+        ) : (
+          <Link href={"/sign-in"}>Login</Link>
+        )
+      }
     </>
 
   )
