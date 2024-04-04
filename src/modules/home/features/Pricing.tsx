@@ -1,4 +1,5 @@
 "use client";
+import PricingCard from "@/shared/components/cards/pricing.card";
 // import PricingCard from "@/shared/components/cards/pricing.card";
 
 import { Button } from "@nextui-org/react";
@@ -38,7 +39,7 @@ const Pricing = () => {
             </Button>
           </div>
         </div>
-        {/* <PricingCard active={active} /> */}
+        <PricingCard active={active} />
       </div>
     </div>
   );

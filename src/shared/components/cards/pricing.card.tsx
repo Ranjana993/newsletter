@@ -5,14 +5,17 @@ import { ICONS } from "@/shared/utils/icons";
 import { Button } from "@nextui-org/button";
 import { useRouter } from "next/navigation";
 
+
+
+
 const PricingCard = ({ active }: { active: string }) => {
   // const { user } = useUser();
   const history = useRouter();
   const handleSubscription = async ({ price }: { price: string }) => {
     // await stripeSubscribe({ price: price, userId: user?.id! }).then(
-    (res: any) => {
-      history.push(res);
-    }
+    // (res: any) => {
+    //   history.push(res);
+    // }
     // );
   };
 
@@ -89,14 +92,18 @@ const PricingCard = ({ active }: { active: string }) => {
           <p className="text-lg">Billed {active}</p>
         </div>
         <div className="pt-5">
-          <p className="text-xl">Everything in Launch, plus...</p>
+          <p className="text-xl">
+            Everything in Launch, plus...
+          </p>
         </div>
-        {GrowPlan.map((i: PlanType, index: number) => (
-          <div key={index} className="flex w-full items-center py-4">
-            <span className="text-xl">{ICONS.right}</span>
-            <p className="pl-2 text-lg">{i.title}</p>
-          </div>
-        ))}
+        {
+          GrowPlan.map((i: PlanType, index: number) => (
+            <div key={index} className="flex w-full items-center py-4">
+              <span className="text-xl">{ICONS.right}</span>
+              <p className="pl-2 text-lg">{i.title}</p>
+            </div>
+          ))
+        }
         <br />
         <Button
           color="primary"
@@ -147,12 +154,14 @@ const PricingCard = ({ active }: { active: string }) => {
         <div className="pt-5">
           <p className="text-xl">Everything in Grow, plus...</p>
         </div>
-        {scalePlan.map((i: PlanType, index: number) => (
-          <div key={index} className="flex w-full items-center py-4">
-            <span className="text-xl">{ICONS.right}</span>
-            <p className="pl-2 text-lg">{i.title}</p>
-          </div>
-        ))}
+        {
+          scalePlan.map((i: PlanType, index: number) => (
+            <div key={index} className="flex w-full items-center py-4">
+              <span className="text-xl">{ICONS.right}</span>
+              <p className="pl-2 text-lg">{i.title}</p>
+            </div>
+          ))
+        }
         <br />
         <Button
           color="primary"
