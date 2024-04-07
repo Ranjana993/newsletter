@@ -40,12 +40,16 @@ export default function Providers({ children }: ProviderProps) {
             {/* <DashboardSidebar /> */}
             dashboard
           </div>
+          {/* allright */}
           {children}
         </div>
       ) : (
-        <>{children}</>
+        <>
+        {/* child */}
+        {children}
+        </>
       )}
-      <Toaster position="top-center" reverseOrder={false} />
+      {/* <Toaster position="top-center" reverseOrder={false} /> */}
     </NextUIProvider>
   );
 }
