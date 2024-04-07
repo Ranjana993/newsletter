@@ -1,25 +1,26 @@
 import { sideBarBottomItems, sideBarItems } from "@/app/configs/constants";
-// import useRouteChange from "@/shared/hooks/useRouteChange";
+import useRouteChange from "@/shared/hooks/useRouteChange";
 import { ICONS } from "@/shared/utils/icons";
 import { useClerk } from "@clerk/nextjs";
 import Link from "next/link";
 import { redirect, usePathname } from "next/navigation";
 // import SidebarFotterLogo from "./sidebar.fotter.logo";
 import { useEffect } from "react";
+import SidebarFotterLogo from "./dashboard.fotter.logo";
 
 const DashboardItems = ({ bottomContent }: { bottomContent?: boolean }) => {
-  // const { activeRoute, setActiveRoute } = useRouteChange();
+  const { activeRoute, setActiveRoute } = useRouteChange();
   const { signOut, user } = useClerk();
-  // const pathName = usePathname();
+  const pathName = usePathname();
 
   const LogoutHandler = () => {
     signOut();
     redirect("/sign-in");
   };
 
-  // useEffect(() => {
-  //   setActiveRoute(pathName);
-  // }, [pathName, setActiveRoute]);
+  useEffect(() => {
+    setActiveRoute(pathName);
+  }, [pathName, setActiveRoute]);
 
   return (
     <>
@@ -85,8 +86,7 @@ const DashboardItems = ({ bottomContent }: { bottomContent?: boolean }) => {
           <br />
           <br />
           <div className="w-full flex justify-center cursor-pointer">
-            {/* <SidebarFotterLogo /> */}
-            SidebarFotterLogo
+            <SidebarFotterLogo />
           </div>
           <p className="text-sm text-center pt-5 pb-10">
             © 2024 Becodemy, Inc. All rights reserved.
