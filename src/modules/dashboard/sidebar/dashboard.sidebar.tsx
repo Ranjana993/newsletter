@@ -7,7 +7,6 @@ import DashboardItems from "./dashboard.items";
 
 const DashboardSideBar = () => {
   const { user } = useUser();
-
   return (
     <div className="p-2">
       <div className="p-2 flex items-center bg-[#f5f5f5f5] rounded">

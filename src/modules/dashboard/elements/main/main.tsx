@@ -1,7 +1,7 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
 
-// import DashboardOverViewCard from "@/shared/components/cards/overview.card";
+import DashboardOverViewCard from "@/shared/components/cards/overview.card";
 // import SubscribersChart from "@/shared/components/charts/subscribers.chart";
 import { Button } from "@nextui-org/react";
 import { ICONS } from "@/shared/utils/icons";
@@ -38,8 +38,7 @@ const Main = () => {
       <div className="w-full flex">
         <div className="w-[65%] min-h-[88vh] pr-5">
           <br />
-          {/* <DashboardOverViewCard /> */}
-          DashboardOverViewCard
+          <DashboardOverViewCard />
           <br />
           {/* <SubscribersChart />
           SubscribersChart */}
