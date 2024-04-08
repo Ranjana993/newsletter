@@ -1,13 +1,12 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
-
 import DashboardOverViewCard from "@/shared/components/cards/overview.card";
-// import SubscribersChart from "@/shared/components/charts/subscribers.chart";
 import { Button } from "@nextui-org/react";
 import { ICONS } from "@/shared/utils/icons";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import SubscribersChart from "@/shared/components/charts/subsribers.chart";
 
 const Main = () => {
   const { user } = useUser();
@@ -40,8 +39,8 @@ const Main = () => {
           <br />
           <DashboardOverViewCard />
           <br />
-          {/* <SubscribersChart />
-          SubscribersChart */}
+          <SubscribersChart />
+
         </div>
         <div className="w-[35%] p-5">
           {/* create newsletter button */}
@@ -59,7 +58,6 @@ const Main = () => {
               {/* home page url */}
               <div>
                 <h4 className="font-medium">Home page</h4>
-
                 <div
                   className="w-full px-2 my-1 h-[38px] bg-transparent border rounded-lg relative flex items-center cursor-pointer"
                   onClick={handleCopyClick}
@@ -84,8 +82,8 @@ const Main = () => {
           <div className="w-full bg-white border rounded p-5 my-3">
             <h5 className="font-medium">Tutorials</h5>
             <p className="text-sm opacity-[.7]">
-              Learn how to get started on becodemy and utilize all our features,
-              directly from the becodemy team.
+              Learn how to get started on grave and utilize all our features,
+              directly from the grave team.
             </p>
             <br />
             <Button className="bg-[#FBCFE8] text-[#831743] rounded-lg h-[35px] flex items-center">

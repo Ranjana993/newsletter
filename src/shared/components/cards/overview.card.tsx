@@ -1,11 +1,11 @@
 "use client";
-// import useSubscribersAnalytics from "@/shared/hooks/useSubscribersAnalytics";
+import useSubscribersAnalytics from "@/shared/hooks/useSubscribersAnalytics";
 import { ICONS } from "@/shared/utils/icons";
 
 const DashboardOverViewCard = () => {
-  // const { subscribersData, loading } = useSubscribersAnalytics();
+  const { subscribersData, loading } = useSubscribersAnalytics();
   // const lastMonthSubscribers =
-    // !loading &&
+  //   !loading &&
   //   subscribersData?.last7Months[subscribersData?.last7Months?.length - 1];
 
   // const previousLastMonthSubscribers =
@@ -24,10 +24,10 @@ const DashboardOverViewCard = () => {
   // }
 
   return (
-    <div className="w-full xl:py-4 flex bg-white border rounded">
+    <div className="w-full xl:py-4 flex flex-col lg:flex-row bg-white border-2 rounded">
       {/* subscribers */}
-      <div className="w-[33.33%] border-r p-5 text-lg">
-        <h5 className="text-lg">Subscribers</h5>
+      <div className="w-full lg:w-[33.33%] border-b-2 lg:border-r p-5 text-lg">
+        <h5 className="text-lg ">Subscribers</h5>
         <div className="w-full flex items-center justify-between">
           <span className="font-medium pt-2">
             {/* {loading ? "..." : 1} */}
@@ -42,7 +42,7 @@ const DashboardOverViewCard = () => {
         </small>
       </div>
       {/* Open Rate */}
-      <div className="w-[33.33%] border-r p-5 text-lg">
+      <div className="w-full lg:w-[33.33%] border-b-2 border-r p-5 text-lg">
         <h5 className="text-lg">Open Rate</h5>
         <div className="w-full flex items-center justify-between">
           <span className="font-medium pt-2">0</span>
@@ -56,7 +56,7 @@ const DashboardOverViewCard = () => {
         </small>
       </div>
       {/* Click Rate */}
-      <div className="w-[33.33%] border-r p-5 text-lg">
+      <div className="w-full lg:w-[33.33%] border-r p-5 text-lg">
         <h5 className="text-lg">Click Rate</h5>
         <div className="w-full flex items-center justify-between">
           <span className="font-medium pt-2">0</span>
