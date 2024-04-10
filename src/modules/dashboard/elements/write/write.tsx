@@ -58,8 +58,8 @@ const Write = () => {
       </div>
 
       {/* saved emails */}
-      {emails &&
-        emails.map((i: any) => {
+      {
+        emails && emails.map((i: any) => {
           const formattedTitle = i?.title
             ?.replace(/\s+/g, "-")
             .replace(/&/g, "-");
@@ -82,38 +82,40 @@ const Write = () => {
               </Link>
             </div>
           );
-        })}
+        })
+      }
 
-      {open && (
-        <div className="absolute flex items-center justify-center top-0 left-0 bg-[#00000028] h-screen w-full">
-          <div className="w-[600px] p-5 bg-white rounded shadow relative">
-            <div className="absolute top-3 right-3">
-              <span
-                className="text-lg cursor-pointer"
-                onClick={() => setOpen(!open)}
+      {
+        open && (
+          <div className="absolute flex items-center justify-center top-0 left-0 bg-[#00000028] h-screen w-full">
+            <div className="w-[600px] p-5 bg-white rounded shadow relative">
+              <div className="absolute top-3 right-3">
+                <span
+                  className="text-lg cursor-pointer"
+                  onClick={() => setOpen(!open)}
+                >
+                  {ICONS.cross}
+                </span>
+              </div>
+              <h5 className="text-2xl">Enter your Email subject</h5>
+              <input
+                type="text"
+                name=""
+                id=""
+                className="border w-full my-2 h-[35px] px-2 outline-none"
+                value={emailTitle}
+                onChange={(e) => setEmailTitle(e.target.value)}
+              />
+              <Button
+                color="primary"
+                className="rounded text-xl mt-3"
+                onClick={handleCreate}
               >
-                {ICONS.cross}
-              </span>
+                Continue
+              </Button>
             </div>
-            <h5 className="text-2xl">Enter your Email subject</h5>
-            <input
-              type="text"
-              name=""
-              id=""
-              className="border w-full my-2 h-[35px] px-2 outline-none"
-              value={emailTitle}
-              onChange={(e) => setEmailTitle(e.target.value)}
-            />
-            <Button
-              color="primary"
-              className="rounded text-xl mt-3"
-              onClick={handleCreate}
-            >
-              Continue
-            </Button>
           </div>
-        </div>
-      )}
+        )}
     </div>
   );
 };
