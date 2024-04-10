@@ -88,8 +88,8 @@ const DashboardItems = ({ bottomContent }: { bottomContent?: boolean }) => {
           <div className="w-full flex justify-center cursor-pointer">
             <SidebarFotterLogo />
           </div>
-          <p className="text-sm text-center pt-5 pb-10">
-            © 2024 Becodemy, Inc. All rights reserved.
+          <p className="text-sm text-center text-red-500 pt-5 pb-10">
+            © 2024 Grove, Inc. All rights reserved.
           </p>
         </>
       )}

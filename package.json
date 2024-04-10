@@ -11,15 +11,21 @@
   "dependencies": {
     "@clerk/nextjs": "^4.29.10",
     "@nextui-org/react": "^2.2.10",
+    "aws-sdk": "^2.1596.0",
     "framer-motion": "^11.0.24",
     "jotai": "^2.7.2",
+    "mongoose": "^8.3.0",
     "next": "14.1.4",
+    "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
+    "react-email-editor": "^1.7.9",
     "react-fast-marquee": "^1.6.4",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.0.1",
-    "recharts": "^2.12.4"
+    "recharts": "^2.12.4",
+    "stargate-mongoose": "^0.5.5",
+    "stripe": "^14.25.0"
   },
   "devDependencies": {
     "@types/node": "^20",
