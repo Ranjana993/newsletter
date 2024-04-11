@@ -8,7 +8,8 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
+import toast from "react-hot-toast"
 
 const Write = () => {
   const [emailTitle, setEmailTitle] = useState("");
