@@ -10,22 +10,13 @@ export const connectDb = async () => {
 
     // Check if there's an existing connection
     if (mongoose.connection.readyState !== 0) {
-      // Disconnect the existing connection
       await mongoose.disconnect();
     }
     mongoose.set("autoCreate", true);
     mongoose.setDriver(driver);
-
-    await mongoose
-      .connect(uri, {
-        isAstra: true,
-      })
-      .then((res) => {
-        console.log("connected");
-      })
-      .catch((r) => {
-        console.log(r);
-      });
+    await mongoose.connect(uri, { isAstra: true })
+      .then((res) => { console.log("connected") })
+      .catch((r) => { console.log(r) });
   } catch (error) {
     console.log(error);
   }
